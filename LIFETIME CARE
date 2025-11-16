@@ -1,0 +1,407 @@
+LifeTimeCare/
+│
+├─ index.html  
+├─ diseases.html  
+├─ about.html  
+├─ contact.html  
+├─ styles.css  
+├─ script.js  
+└─ assets/
+   ├─ images/
+   │   ├─ sicklecell.jpg  
+   │   ├─ normal_rbc.jpg  
+   │   └─ white_blood_cells.svg  
+   └─ animations/
+       └─ blood-drop.json  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Time Care - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Life Time Care</h2>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="diseases.html">Diseases</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </aside>
+
+  <header class="main-header">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h1>Life Time Care</h1>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content" data-aos="fade-right">
+      <h1>Welcome to Life Time Care</h1>
+      <p>Your reliable source for blood‑disorder education and support.</p>
+      <a href="diseases.html" class="cta-btn">Explore Diseases</a>
+    </div>
+    <div id="animation" data-aos="fade-left"></div>
+  </section>
+
+  <section class="info-section">
+    <h2 data-aos="fade-up">What We Do</h2>
+    <p data-aos="fade-up" data-aos-delay="100">
+      We provide clear, research‑based information on common and rare blood‑related diseases — symptoms, causes, and treatment options.
+    </p>
+    <div class="info-grid">
+      <div class="info-card" data-aos="zoom-in">
+        <img src="assets/images/sicklecell.jpg" alt="Blood cells">
+        <h3>Learn about Diseases</h3>
+        <p>Detailed overviews of sickle cell, anemia, leukemia, hemophilia, and more.</p>
+      </div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/images/normal_rbc.jpg" alt="Normal red blood cells">
+        <h3>Recognize Symptoms</h3>
+        <p>Understand early signs & when to seek medical help.</p>
+      </div>
+      <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/images/white_blood_cells.svg" alt="White Blood Cells">
+        <h3>Treatment & Support</h3>
+        <p>Learn about treatments, lifestyle changes, and coping strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>© 2025 Life Time Care • CEO: JOSEPH AMANKWAH FRIMPONG</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
+  <script>
+    AOS.init();
+    lottie.loadAnimation({
+      container: document.getElementById('animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/animations/blood-drop.json'
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Time Care — Diseases</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Life Time Care</h2>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html">Home</a>
+      <a href="diseases.html" class="active">Diseases</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </aside>
+
+  <header class="main-header">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h1>Diseases</h1>
+  </header>
+
+  <main class="page-wrap">
+    <section class="search-panel card" data-aos="fade-down">
+      <input id="searchBox" type="search" placeholder="Search for a disease...">
+      <select id="filterType">
+        <option value="all">All Types</option>
+        <option value="genetic">Genetic</option>
+        <option value="cancer">Cancer</option>
+        <option value="clotting">Clotting</option>
+        <option value="other">Other</option>
+      </select>
+    </section>
+
+    <section class="diseases-grid" id="diseasesGrid">
+      <article class="d-card" data-name="Sickle Cell Disease" data-type="genetic" data-aos="fade-up">
+        <img src="assets/images/sicklecell.jpg" alt="Sickle Cell Disease">
+        <h3>Sickle Cell Disease</h3>
+        <p>A genetic disorder where red blood cells deform into a sickle shape, leading to blockages and reduced oxygen delivery.</p>
+        <button class="details-btn">View Details</button>
+      </article>
+
+      <article class="d-card" data-name="Anemia" data-type="other" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/images/normal_rbc.jpg" alt="Anemia">
+        <h3>Anemia</h3>
+        <p>A condition characterized by insufficient healthy red blood cells or hemoglobin, causing fatigue and weakness.</p>
+        <button class="details-btn">View Details</button>
+      </article>
+
+      <!-- You can add more disease cards similarly -->
+    </section>
+
+    <div id="modal" class="modal">
+      <div class="modal-content card">
+        <button class="modal-close" onclick="closeModal()">✖</button>
+        <h2 id="modalTitle">Disease Name</h2>
+        <img id="modalImg" src="" alt="">
+        <h3>Signs & Symptoms</h3>
+        <p id="modalSymptoms"></p>
+        <h3>Causes</h3>
+        <p id="modalCauses"></p>
+        <h3>Treatments</h3>
+        <p id="modalTreatments"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">© 2025 Life Time Care</footer>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Time Care - About</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Life Time Care</h2>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html">Home</a>
+      <a href="diseases.html">Diseases</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </aside>
+
+  <header class="main-header">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h1>About Us</h1>
+  </header>
+
+  <main class="page-wrap">
+    <section class="info-section" data-aos="fade-up">
+      <h2>CEO</h2>
+      <p>JOSEPH AMANKWAH FRIMPONG</p>
+    </section>
+
+    <section class="info-section" data-aos="fade-up" data-aos-delay="100">
+      <h2>Mission</h2>
+      <p>To empower people with clear, research‑based knowledge about blood disorders.</p>
+    </section>
+
+    <section class="info-section" data-aos="fade-up" data-aos-delay="200">
+      <h2>Vision</h2>
+      <p>Become the top trusted resource for blood‑disease education worldwide.</p>
+    </section>
+
+    <section class="info-section" data-aos="fade-up" data-aos-delay="300">
+      <h2>Values</h2>
+      <ul>
+        <li>Accuracy & Integrity</li>
+        <li>Accessibility</li>
+        <li>Community Support</li>
+        <li>Continuous Learning</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="main-footer">© 2025 Life Time Care</footer>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Time Care - Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Life Time Care</h2>
+      <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html">Home</a>
+      <a href="diseases.html">Diseases</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </aside>
+
+  <header class="main-header">
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    <h1>Contact Us</h1>
+  </header>
+
+  <main class="page-wrap">
+    <section class="info-section" data-aos="fade-up">
+      <h2>Get in Touch</h2>
+      <p>Have questions or need more information? Send us a message:</p>
+      <form id="contactForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" rows="5" required></textarea><br><br>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+
+    <section class="info-section" data-aos="fade-up" data-aos-delay="200">
+      <h2>Our Info</h2>
+      <p><strong>Email:</strong> support@lifetimecare.com</p>
+      <p><strong>Phone:</strong> +233 24 000 0000</p>
+      <p><strong>Address:</strong> 123 Health Avenue, Accra, Ghana</p>
+    </section>
+  </main>
+
+  <footer class="main-footer">© 2025 Life Time Care</footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thank you, '+document.getElementById('name').value+'! We have received your message.');
+      this.reset();
+    });
+  </script>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
+:root {
+  --bg: #f5f7fb;
+  --card: #fff;
+  --accent: #2a71d0;
+  --accent-dark: #1f5cad;
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: var(--bg); color: #333; }
+
+.sidebar {
+  position: fixed; top: 0; left: 0;
+  width: 260px; height: 100vh;
+  background: var(--accent);
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.sidebar.open { transform: translateX(0); }
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 16px; padding: 20px; }
+.sidebar-nav a { color: white; text-decoration: none; font-weight: 500; }
+.sidebar-nav a.active, .sidebar-nav a:hover { background: rgba(255,255,255,0.1); border-radius: 6px; padding: 8px; }
+
+.main-header { display: flex; align-items: center; padding: 16px 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
+.menu-btn { font-size: 24px; background: none; border: none; cursor: pointer; color: var(--accent); }
+.main-header h1 { margin-left: 16px; color: var(--accent-dark); }
+
+.hero-section { display: flex; align-items: center; justify-content: space-between; padding: 60px 20px; }
+.hero-content { max-width: 50%; }
+.hero-content h1 { font-size: 2.8rem; color: var(--accent-dark); }
+.hero-content p { margin: 20px 0; font-size: 1.1rem; color: var(--muted); }
+.cta-btn { display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: white; padding: 12px 24px; border-radius: var(--radius); text-decoration: none; font-weight: 500; transition: transform 0.2s, box-shadow 0.2s; }
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+
+.info-section { padding: 60px 20px; text-align: center; }
+.info-section h2 { font-size: 2rem; margin-bottom: 16px; color: var(--accent-dark); }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 32px; margin-top: 40px; }
+.info-card { background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.3s; }
+.info-card:hover { transform: translateY(-5px); }
+.info-card img { width: 100%; border-radius: var(--radius); margin-bottom: 16px; }
+
+.page-wrap { margin-left: 260px; padding: 20px; }
+.card { background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; }
+
+.diseases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 20px; }
+.d-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.2s; }
+.d-card:hover { transform: translateY(-5px); }
+.d-card img { width: 100%; object-fit: cover; height: 140px; }
+.d-card h3 { margin: 12px 16px 8px; color: var(--accent-dark); }
+.d-card p { margin: 0 16px 16px; color: var(--muted); font-size: 0.95rem; }
+.details-btn { margin: 0 16px 16px; padding: 8px 12px; background: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+.modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); display: none; align-items: center; justify-content: center; padding: 20px; }
+.modal.open { display: flex; }
+.modal-content { background: white; padding: 24px; border-radius: var(--radius); max-width: 600px; width: 100%; position: relative; }
+.modal-close { position: absolute; top: 12px; right: 12px; background: none; border: none; font-size: 24px; cursor: pointer; }
+
+.main-footer { text-align: center; padding: 30px 20px; color: var(--muted); margin-top: 40px; }
+
+@media (max-width: 768px) {
+  .hero-section { flex-direction: column; gap: 40px; }
+  .page-wrap { margin-left: 0; }
+}
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+const diseaseData = {
+  "Sickle Cell Disease": {
+    img: 'assets/images/sicklecell.jpg',
+    symptoms: 'Severe pain (crises), anemia, swollen hands/feet, frequent infections, delayed growth.',
+    causes: 'Inherited mutation in the hemoglobin‑beta gene, producing hemoglobin S.',
+    treatments: 'Hydroxyurea, blood transfusions, bone marrow transplant, pain & hydration management.'
+  },
+  "Anemia": {
+    img: 'assets/images/normal_rbc.jpg',
+    symptoms: 'Tiredness, weakness, pale skin, shortness of breath.',
+    causes: 'Iron deficiency, vitamin deficiency, chronic disease.',
+    treatments: 'Supplements, dietary changes, treating underlying causes.'
+  }
+  // Add more diseases similarly
+};
+
+document.querySelectorAll('.details-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    const name = e.target.closest('.d-card').dataset.name;
+    const data = diseaseData[name];
+    if (data) {
+      document.getElementById('modalTitle').textContent = name;
+      document.getElementById('modalImg').src = data.img;
+      document.getElementById('modalSymptoms').textContent = data.symptoms;
+      document.getElementById('modalCauses').textContent = data.causes;
+      document.getElementById('modalTreatments').textContent = data.treatments;
+      document.getElementById('modal').classList.add('open');
+    }
+  });
+});
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+}
